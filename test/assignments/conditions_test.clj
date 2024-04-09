@@ -10,7 +10,7 @@
     (is (nil? (c/safe-divide 3 0)))))
 
 ;; when ready to implement mark ^:kaocha/pending as ^:implementing
-(deftest ^:kaocha/pending informative-division-test
+(deftest ^:implemented informative-division-test
   (testing "non zero denominator calculates result"
     (is (= 2 (c/informative-divide 4 2))))
   (testing "zero denominator yields :infinite"
