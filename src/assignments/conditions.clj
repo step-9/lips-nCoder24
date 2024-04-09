@@ -22,14 +22,18 @@
   {:level :easy
    :use   '[when-let]}
   [x]
-  (when-let [val x] val))
+  (when-let [val x] 
+    val))
 
 (defn yudishtira
   "Only returns truthy values as themselves.
   Falsy values(false and nil) return :ashwathama"
   {:level :easy
    :use   '[if-let]}
-  [x])
+  [x]
+  (if-let [val x] 
+    val 
+    :ashwathama))
 
 (defn duplicate-first
   "Returns coll with the first element duplicated.
