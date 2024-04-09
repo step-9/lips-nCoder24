@@ -3,7 +3,7 @@
             [assignments.conditions :as c]))
 
 ;; When done with this, mark ^:implementing as ^:implemented
-(deftest ^:implementing safe-division-test
+(deftest ^:implemented safe-division-test
   (testing "non zero denominator"
     (is (= 2 (c/safe-divide 4 2))))
   (testing "zero denominator"
