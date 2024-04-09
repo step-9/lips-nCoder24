@@ -12,7 +12,7 @@
   {:level :easy
    :use   '[if-not zero?]}
   [x y]
-  (if-not (zero? y) 
+  (if-not (zero? y)
     (/ x y)
     :infinite))
 
@@ -22,7 +22,7 @@
   {:level :easy
    :use   '[when-let]}
   [x]
-  (when-let [val x] 
+  (when-let [val x]
     val))
 
 (defn yudishtira
@@ -31,8 +31,8 @@
   {:level :easy
    :use   '[if-let]}
   [x]
-  (if-let [val x] 
-    val 
+  (if-let [val x]
+    val
     :ashwathama))
 
 (defn duplicate-first
@@ -58,6 +58,13 @@
     (> x y) :greece
     :else :universe))
 
+(defn occors-once-in-order?
+  "Returns true if the elements occurs in the collection in the order of the elements
+   Returns false otherwise"
+  [elems coll]
+  (= elems
+     (filter (set elems) coll)))
+
 (defn conditions-apply
   "Given a collection of any length, returns:
   :wonder-woman if collection has a single occurrence of 1 and 3 in that order
@@ -67,7 +74,12 @@
   {:level      :medium
    :use        '[condp filter]
    :alternates '[if cond]}
-  [coll])
+  [coll]
+  (condp occors-once-in-order? coll
+    [1 3]         :wonder-woman
+    [:a :b :c]    :durga
+    [[2 3] [4 5]] :cleopatra
+    :tuntun))
 
 (defn repeat-and-truncate
   "Given coll and options to repeat and truncate
