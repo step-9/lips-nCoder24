@@ -21,7 +21,8 @@
   Falsy values(false and nil) return nil"
   {:level :easy
    :use   '[when-let]}
-  [x])
+  [x]
+  (when-let [val x] val))
 
 (defn yudishtira
   "Only returns truthy values as themselves.
